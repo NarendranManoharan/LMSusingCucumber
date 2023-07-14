@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QM Automation Script</title>
+  </head>
+<body >  
+<h1><B>LMS Environments</h1></p>
+<form>
+<input type="radio" name="PSP" id="LMSTEST" value="LMSTEST">LMSTEST<br> 
+<input type="radio" name="PSP"  id="LMSDEV" value="LMSDEV">LMSDEV<br> 
+<input type="radio" name="PSP"  id="LMSSTG" value="LMSSTG">LMSSTG<br>
+<input type="radio" name="PSP"  id="LMSTRG" value="LMSTRG">LMSTRG<br>
+<button type="button" onclick=" checkButton()"> Submit </button> 
+</form>
+<p id="result"></p>   
+
+</body>
+<script>
+    function checkButton() {  
+                if(document.getElementById("LMSTEST").checked) { 
+				    document.getElementById("result").innerHTML= "LMSTEST Selected";
+                    alert("Environment selected: LMSTEST")
+					document.location.href = 'http://lmstest.pilship.com/opuscntr/SignOn.do' ;
+                } 
+                else if(document.getElementById('LMSDEV').checked) { 
+				    document.getElementById("result").innerHTML="LMSDEV Selected";
+                    alert( "Environment selected: LMSDEV" )     
+                } 
+                else if(document.getElementById('LMSSTG').checked) { 
+				    document.getElementById("result").innerHTML="LMSSTG Selected";
+                    alert("Environment selected: LMSSTG" )
+                       
+                } 
+                else if(document.getElementById('LMSTRG').checked) {
+				     document.getElementById("result").innerHTML="LMSTRG Selected";
+                    alert( "Environment selected: LMSTRG" )
+                }
+                else { 
+                    alert( "You have not selected any option")
+                       
+                } 
+            } 
+        </script> 
+    </html>
